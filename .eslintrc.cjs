@@ -10,5 +10,8 @@ module.exports = {
   ],
   parserOptions: {
     ecmaVersion: 'latest'
+  },
+  rules:{
+    "vue/multi-word-component-names": "off" // 解决index.vue命名规范检测
   }
 }
