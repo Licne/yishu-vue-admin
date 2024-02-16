@@ -1,0 +1,34 @@
+// 全局SCSS变量
+// --menuBg：菜单背景颜色。
+// --menuText：菜单文本颜色。
+// --menuActiveText：菜单激活状态下的文本颜色。
+// --menuHover：菜单鼠标悬停时的背景颜色。
+// --subMenuBg：子菜单背景颜色。
+// --subMenuActiveText：子菜单激活状态下的文本颜色。
+// --subMenuHover：子菜单鼠标悬停时的背景颜色。
+
+:root {
+    --menuBg: #304156;
+    --menuText: #bfcbd9;
+    --menuActiveText: #409eff;
+    --menuHover: #263445;
+    --subMenuBg: #1f2d3d;
+    --subMenuActiveText: #f4f4f5;
+    --subMenuHover: #001528;
+  
+    // wang-editor textarea
+    --w-e-textarea-slight-border-color: var(--el-color-primary);
+    --w-e-textarea-slight-bg-color: rgb(var(--el-color-primary-rgb) 0.1);
+    --w-e-textarea-selected-border-color: var(--el-color-primary);
+  }
+  
+  $menuBg: var(--menuBg);
+  $menuText: var(--menuText);
+  $menuActiveText: var(--menuActiveText);
+  $menuHover: var(--menuHover);
+  
+  $subMenuBg: var(--subMenuBg);
+  $subMenuActiveText: var(--subMenuActiveText);
+  $subMenuHover: var(--subMenuHover);
+  
+  $sideBarWidth: 210px;
