@@ -1,14 +1,12 @@
 <template>
   <div class="sidebar-container">
-    <!-- 标题 -->
-    <div class="sidebar-header h-[5rem] font-bold text-[1.4rem] text-center p-[1.4rem]">
-      <span>易书后台管理系统</span>
-
-    </div>
-
-    <!-- 菜单 -->
     <el-menu :background-color="variables.menuBg" :text-color="variables.menuText"
-      :active-text-color="variables.menuActiveText" class="w-[20.1rem] menu-container">
+      :active-text-color="variables.menuActiveText" class="w-full menu-container h-full">
+      <!-- 标题 -->
+      <div class="sidebar-header h-[5rem] font-bold text-[1.4rem] text-center p-[1.4rem]">
+      <span>易书后台管理系统</span>
+      </div>
+      <!-- 菜单 -->
       <el-menu-item @click="handleSelect(page)" :index="page.name" v-for="page in pagesStore.pages" :key="page.name">
         <div class="flex justify-center items-center">
           <el-icon>
@@ -26,15 +24,18 @@ import {useRouter} from 'vue-router'
 import variables from "@/styles/variables.module.scss";
 
 import { usePagesStore } from "@/stores/modules/pages";
+// import {pageChange} from '@/utils/routerManager'
 
 const pagesStore = usePagesStore();
 
 const router = useRouter();
 
 const handleSelect = (page:any) => {
+  // pageChange(page.name,page.path);
+  
+  pagesStore.changePageActive(page.name)
   router.push(page.path);
-  page.isActive = true;
-  console.log(pagesStore.pages);
+  // console.log(pagesStore.pages);
 }
 
 
@@ -42,7 +43,7 @@ const handleSelect = (page:any) => {
 
 <style lang="scss" scoped>
 .sidebar-container {
-  background-color: $menuBg;
+  // background-color: $menuBg;
   width: 100%;
   height: 100%;
 }

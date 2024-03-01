@@ -3,13 +3,19 @@ export interface LoginData {
     username:string;
     // 密码
     password:string;
-    // 验证缓存
-    captchaKey?: string;
-    // 验证码
-    captchaCode?: string;
+    // // 验证缓存
+    // captchaKey?: string;
+    // // 验证码
+    // captchaCode?: string;
 
 }
 
-export interface Temp {
-    
+export interface LoginResult {
+    // 状态
+    status:number,
+    // token
+    token:string,
+    //
+    Authorization:string
 }
+

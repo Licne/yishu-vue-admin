@@ -9,8 +9,12 @@ const router = createRouter({
       component: () => import('@/views/Login/index.vue')
     },
     {
-      path: '/',
+      path: '/dashboard',
       name:'dashboard',
+      redirect:'/home'
+    },
+    {
+      path: '/',
       component: () => import('@/views/Dashboard/index.vue'),
       redirect:'/home',
       children:[
@@ -49,5 +53,24 @@ const router = createRouter({
     },
   ]
 })
+
+router.beforeEach((to, from, next) => {
+  //前置守卫,判断是否登录
+  if (to.path === '/login') {
+    next()
+  } else {
+    if (localStorage.getItem('accessToken')) {
+      // 已登录
+      next()
+    }else{
+      next('/login')
+    }
+  }
+})
+
+
+// router.router.beforeEach((to, from, next) => {
+  
+// })
 
 export default router

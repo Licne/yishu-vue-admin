@@ -27,21 +27,25 @@
 import { ref } from 'vue'
 import router from '@/router';
 
+import {useUsersStore} from '@/stores/modules/users'
+
 import type { LoginData } from "@/apis/auth/types";
 
-
+const usersStore = useUsersStore();
 
 /**
  * 登录
  */
 const loginData = ref<LoginData>({
     username: "admin",
-    password: "114514",
+    password: "admin",
 })
 
-const handleLogin = () => {
-    console.log('1');
-    router.push('/dashboard');
+const handleLogin = async () => {
+    // console.log(loginData.value)
+    await usersStore.login(loginData.value);
+    console.log('登录成功');
+    router.push('/home');
 }
 
 </script>
