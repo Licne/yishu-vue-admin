@@ -11,11 +11,7 @@ export interface LoginData {
 }
 
 export interface LoginResult {
-    // 状态
-    status:number,
     // token
     token:string,
-    //
-    Authorization:string
 }
 

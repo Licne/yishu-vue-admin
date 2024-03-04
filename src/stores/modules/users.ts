@@ -17,12 +17,12 @@ export const useUsersStore = defineStore('users',() => {
 
         try {
             const res = await loginApi(data);
-            console.log(res);
             token.value = res.data.Authorization;
-
-            console.log(res);        
+            console.log("登录成功");        
         } catch (error) {
+            token.value = '';
             console.log(error);
+            return Promise.reject(error)
         }
 
 

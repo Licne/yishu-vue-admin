@@ -11,5 +11,13 @@ declare global {
         // 组件路径
         iconName:string;
     }
+
+    interface Pagination {
+        // 页码
+        page:number;
+        // 页面大小
+        pageSize:number;
+    }
 }
 export {};
+

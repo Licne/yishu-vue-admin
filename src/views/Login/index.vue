@@ -43,9 +43,13 @@ const loginData = ref<LoginData>({
 
 const handleLogin = async () => {
     // console.log(loginData.value)
-    await usersStore.login(loginData.value);
-    console.log('登录成功');
-    router.push('/home');
+
+    try {
+        await usersStore.login(loginData.value);
+        router.push('/home');
+    } catch (error) {
+        console.log('出错')
+    }
 }
 
 </script>

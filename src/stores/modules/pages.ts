@@ -12,11 +12,11 @@ export const usePagesStore = defineStore('pages',() => {
             iconName:'setting'
         },
         {
-            title:'测试页面1',
-            name:'testPage1',
-            path:'/testPage1',
+            title:'商品管理',
+            name:'productsManagement',
+            path:'/productsManagement',
             isActive:false,
-            iconName:'setting'
+            iconName:'ShoppingBag'
         },
         {
             title:'测试页面2',
