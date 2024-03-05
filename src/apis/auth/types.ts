@@ -12,6 +12,6 @@ export interface LoginData {
 
 export interface LoginResult {
     // token
-    token:string,
+    Authorization:string;
 }
 

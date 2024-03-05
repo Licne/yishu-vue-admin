@@ -1,16 +1,25 @@
 import request from '@/utils/request'
-import type { ProductsSearchData } from './types';
+import type { ProductsSearchData,ProductsData} from './types';
 import type { AxiosPromise } from 'axios';
 
-export function loginApi(data:LoginData):AxiosPromise<LoginResult> {
+export function productsSearcApi(data:ProductsSearchData):AxiosPromise<ProductsData> {
     return request({
-        url:'/login/userLogin',
+        url:'/goods/page',
         headers: {
-            isToken: false
+            isToken: true
         },
-        method:'post',
-        data:data
+        method:'get',
+        params:data
     })
 }
 
-export function productsSearchApi(data:ProductsSearchData):AxiosPromise<>
+export function productsSearchByOwnerApi(data:ProductsSearchData):AxiosPromise<ProductsData> {
+    return request({
+        url:'/goods/ownerPage',
+        headers: {
+            isToken: false
+        },
+        method:'get',
+        params:data
+    })
+}
